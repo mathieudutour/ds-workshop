@@ -1,0 +1,34 @@
+{
+  "name": "foobar",
+  "version": "0.1.0",
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "foobar",
+    "manifest": "src/sketch-plugin/manifest.json",
+    "main": "plugin.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ]
+  },
+  "scripts": {
+    "build:sketch": "skpm-build",
+    "watch:sketch": "skpm-build --watch",
+    "start:sketch": "skpm-build --watch --run",
+    "build:web": "react build src/web/index.js",
+    "start:web": "react run src/web/index.js",
+    "postinstall": "npm run build:sketch && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.5.2",
+    "nwb": "^0.23.0"
+  },
+  "dependencies": {
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-primitives": "^0.6.1",
+    "react-sketchapp": "^2.0.0",
+    "react-test-renderer": "^16.5.1"
+  }
+}
