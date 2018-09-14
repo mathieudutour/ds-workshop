@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { render, Artboard } from 'react-sketchapp'
-import Button from '../design-system/components/Button'
+import ButtonExamples from '../design-system/components/Button.examples'
 
 const Document = ({children}) => (
   <Artboard
@@ -17,7 +17,6 @@ const Document = ({children}) => (
 
 export default function(context) {
   render(<Document>
-    <Button text="Normal button" />
-    <Button primary text="Primary button" />
+    {ButtonExamples.map(e => e.component)}
   </Document>, context.document.currentPage());
 }
