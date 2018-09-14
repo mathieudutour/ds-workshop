@@ -1,9 +1,10 @@
 import { colors } from './colors.json'
 import { shadows, defaultShadowName } from './shadows.json'
-import { textStyles, defaultStyleName } from './textStyles.json'
+import { styles as textStyles, defaultStyleName } from './textStyles.json'
 
 export function getColor(id) {
-  return colors.find(color => color.id === id) || id
+  const color = colors.find(color => color.id === id)
+  return color ? color.value : id
 }
 
 export function getShadow(id = defaultShadowName) {
