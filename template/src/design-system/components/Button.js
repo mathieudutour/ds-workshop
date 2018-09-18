@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text, View } from 'react-sketchapp'
+import { Text, View } from 'react-primitives'
 
 import { getColor, getTextStyle } from '../tokens'
 
