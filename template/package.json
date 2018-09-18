@@ -16,8 +16,8 @@
     "build:sketch": "skpm-build",
     "watch:sketch": "skpm-build --watch",
     "start:sketch": "skpm-build --watch --run",
-    "build:web": "react build src/web/index.js",
-    "start:web": "react run src/web/index.js",
+    "build:web": "nwb react build ./src/web/index.js",
+    "start:web": "nwb react run ./src/web/index.js",
     "postinstall": "npm run build:sketch && skpm-link"
   },
   "devDependencies": {
@@ -25,10 +25,10 @@
     "nwb": "^0.23.0"
   },
   "dependencies": {
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
+    "react": "~16.3.1",
+    "react-dom": "~16.3.1",
     "react-primitives": "^0.6.1",
     "react-sketchapp": "^2.1.0",
-    "react-test-renderer": "^16.5.1"
+    "react-test-renderer": "~16.3.1"
   }
 }
