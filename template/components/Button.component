@@ -1,0 +1,172 @@
+{
+  "devices" : [
+    {
+      "height" : 100,
+      "heightMode" : "At Least",
+      "name" : "iPhone SE",
+      "width" : 320
+    },
+    {
+      "height" : 100,
+      "heightMode" : "At Least",
+      "name" : "iPhone 7",
+      "visible" : false,
+      "width" : 375
+    },
+    {
+      "height" : 100,
+      "heightMode" : "At Least",
+      "name" : "iPhone 7+",
+      "visible" : false,
+      "width" : 414
+    }
+  ],
+  "examples" : [
+    {
+      "id" : "Button_Normal",
+      "name" : "Button\/Normal",
+      "params" : {
+        "text" : "Normal Button"
+      }
+    },
+    {
+      "id" : "Button_Primary",
+      "name" : "Button\/Primary",
+      "params" : {
+        "primary" : true,
+        "text" : "Primary Button"
+      }
+    }
+  ],
+  "logic" : [
+    {
+      "body" : [
+        {
+          "assignee" : [
+            "layers",
+            "View",
+            "backgroundColor"
+          ],
+          "content" : {
+            "type" : "LitExpr",
+            "value" : {
+              "data" : "deeppurple600",
+              "type" : "Color"
+            }
+          },
+          "type" : "AssignExpr"
+        },
+        {
+          "assignee" : [
+            "layers",
+            "Text",
+            "textStyle"
+          ],
+          "content" : {
+            "type" : "LitExpr",
+            "value" : {
+              "data" : "buttonPrimary",
+              "type" : "TextStyle"
+            }
+          },
+          "type" : "AssignExpr"
+        }
+      ],
+      "condition" : {
+        "left" : [
+          "parameters",
+          "primary"
+        ],
+        "op" : "==",
+        "right" : {
+          "type" : "LitExpr",
+          "value" : {
+            "data" : {
+              "case" : "Some",
+              "data" : true
+            },
+            "type" : "Boolean?"
+          }
+        },
+        "type" : "BinExpr"
+      },
+      "type" : "IfExpr"
+    },
+    {
+      "body" : [
+        {
+          "assignee" : [
+            "layers",
+            "Text",
+            "text"
+          ],
+          "content" : [
+            "parameters",
+            "text"
+          ],
+          "type" : "AssignExpr"
+        }
+      ],
+      "condition" : {
+        "left" : [
+          "parameters",
+          "text"
+        ],
+        "op" : "!=",
+        "right" : [
+          "none"
+        ],
+        "type" : "BinExpr"
+      },
+      "type" : "IfExpr"
+    }
+  ],
+  "metadata" : {
+    "description" : "Button"
+  },
+  "params" : [
+    {
+      "defaultValue" : {
+        "data" : {
+          "case" : "None",
+          "data" : null
+        },
+        "type" : "Boolean?"
+      },
+      "name" : "primary",
+      "type" : "Boolean?"
+    },
+    {
+      "name" : "text",
+      "type" : "String"
+    }
+  ],
+  "root" : {
+    "children" : [
+      {
+        "id" : "Text",
+        "params" : {
+          "borderColor" : "deeppurple600",
+          "font" : "button",
+          "text" : "text goes here",
+          "textAlign" : "center"
+        },
+        "type" : "Lona:Text"
+      }
+    ],
+    "id" : "View",
+    "params" : {
+      "alignItems" : "center",
+      "borderColor" : "deeppurple600",
+      "borderRadius" : 20,
+      "borderWidth" : 1,
+      "height" : 36,
+      "justifyContent" : "center",
+      "paddingBottom" : 8,
+      "paddingLeft" : 25,
+      "paddingRight" : 25,
+      "paddingTop" : 8
+    },
+    "type" : "Lona:View"
+  }
+}

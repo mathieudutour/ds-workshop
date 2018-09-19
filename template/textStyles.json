@@ -98,7 +98,13 @@
       "fontWeight": "500",
       "fontSize": 14,
       "lineHeight": 18,
-      "color": "black"
+      "color": "deeppurple600"
+    },
+    {
+      "id": "buttonPrimary",
+      "name": "Primary Button",
+      "extends": "button",
+      "color": "white"
     }
   ]
 }
